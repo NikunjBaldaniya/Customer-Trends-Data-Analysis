@@ -23,6 +23,7 @@ The workflow is:
 | --- | --- |
 | `customer_shopping_behavior.csv` | Source customer shopping dataset. |
 | `main.ipynb` | Python notebook containing the data preparation and PostgreSQL loading workflow. |
+| `requirements.txt` | Python packages required to run the analysis and export workflow. |
 | `customer_behavior_dashboard.pbix` | Power BI dashboard file. |
 | `insights.md` | Concise business insights derived from the analysis. |
 | `screen_shorts/` | Screenshots documenting the notebook workflow and dashboard. |
@@ -105,19 +106,51 @@ The resulting field is named `purchase_frequency_days`.
 ## Technology Stack
 
 - Python
-- pandas
-- SQLAlchemy
-- PostgreSQL
-- Power BI
-- Jupyter Notebook
+- pandas for data cleaning, analysis, and transformation
+- SQLAlchemy for database engine creation
+- psycopg2-binary for PostgreSQL connectivity
+- Jupyter Notebook for running the analysis workflow
+- PostgreSQL for storing the cleaned customer dataset
+- Power BI for dashboard reporting
 
 ## Requirements
 
-Install the Python dependencies with:
+This project uses the Python libraries listed in `requirements.txt`.
+
+### Create a virtual environment
+
+From the project folder, create and activate a virtual environment:
 
 ```bash
-pip install pandas sqlalchemy psycopg2-binary jupyter
+python -m venv .venv
 ```
+
+On Windows:
+
+```bash
+.venv\Scripts\activate
+```
+
+On macOS/Linux:
+
+```bash
+source .venv/bin/activate
+```
+
+### Install dependencies
+
+Install the project dependencies from the requirements file:
+
+```bash
+pip install -r requirements.txt
+```
+
+The project dependencies include:
+
+- pandas
+- SQLAlchemy
+- psycopg2-binary
+- jupyter
 
 You also need:
 
